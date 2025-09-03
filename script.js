@@ -33,6 +33,7 @@ class GitHubProfileGenerator {
                 repeat: -1,
                 ease: "none"
             });
+        }
 
         // Animate skill sections with staggered delay
         gsap.utils.toArray('.skill-section').forEach((element, i) => {
