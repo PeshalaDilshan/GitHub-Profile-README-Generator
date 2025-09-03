@@ -26,14 +26,12 @@ class GitHubProfileGenerator {
 
     init() {
         // Animate GitHub icon
-        if (typeof gsap !== 'undefined') {
-            gsap.to('#github-icon', {
-                rotation: 360,
-                duration: 20,
-                repeat: -1,
-                ease: "none"
-            });
-        }
+        gsap.to('#github-icon', {
+            rotation: 360,
+            duration: 20,
+            repeat: -1,
+            ease: "none"
+        });
 
         // Animate skill sections with staggered delay
         gsap.utils.toArray('.skill-section').forEach((element, i) => {
