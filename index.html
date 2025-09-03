@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
-    <div id="app" class="max-w-6xl mx-auto px-4 py-8">
+    <div id="app" class="max-w-7xl mx-auto px-4 py-8">
         <!-- Header -->
         <header class="mb-12 text-center">
             <div class="flex justify-center mb-4">
@@ -55,7 +55,7 @@
                             <!-- Skills with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Skills</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="skills-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Problem Solving">Problem Solving</option>
                                         <option value="Team Leadership">Team Leadership</option>
@@ -83,7 +83,7 @@
                                         <option value="Documentation">Documentation</option>
                                         <option value="Open Source">Open Source</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-skills" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -99,7 +99,7 @@
                             <!-- Programming Languages with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Programming Languages</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="programming-languages-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="JavaScript">JavaScript</option>
                                         <option value="Python">Python</option>
@@ -136,7 +136,7 @@
                                         <option value="SQL">SQL</option>
                                         <option value="Solidity">Solidity</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-programming-language" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -152,7 +152,7 @@
                             <!-- Frontend Development with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Frontend Development</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="frontend-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="React">React</option>
                                         <option value="Vue">Vue</option>
@@ -181,7 +181,7 @@
                                         <option value="Foundation">Foundation</option>
                                         <option value="Semantic UI">Semantic UI</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-frontend" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -197,7 +197,7 @@
                             <!-- Backend Development with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Backend Development</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="backend-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Node.js">Node.js</option>
                                         <option value="Express">Express</option>
@@ -224,7 +224,7 @@
                                         <option value="Strapi">Strapi</option>
                                         <option value="KeystoneJS">KeystoneJS</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-backend" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -240,7 +240,7 @@
                             <!-- Mobile App Development with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Mobile App Development</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="mobile-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="React Native">React Native</option>
                                         <option value="Flutter">Flutter</option>
@@ -258,7 +258,7 @@
                                         <option value="Expo">Expo</option>
                                         <option value="Capacitor">Capacitor</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-mobile" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -274,7 +274,7 @@
                             <!-- AI/ML with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">AI/ML</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="ai-ml-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="TensorFlow">TensorFlow</option>
                                         <option value="PyTorch">PyTorch</option>
@@ -301,7 +301,7 @@
                                         <option value="Flair">Flair</option>
                                         <option value="Stanza">Stanza</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-ai-ml" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -317,7 +317,7 @@
                             <!-- Database with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Database</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="database-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="MongoDB">MongoDB</option>
                                         <option value="PostgreSQL">PostgreSQL</option>
@@ -341,7 +341,7 @@
                                         <option value="ArangoDB">ArangoDB</option>
                                         <option value="RethinkDB">RethinkDB</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-database" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -357,7 +357,7 @@
                             <!-- Data Visualization with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Data Visualization</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="data-visualization-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="D3.js">D3.js</option>
                                         <option value="Chart.js">Chart.js</option>
@@ -376,7 +376,7 @@
                                         <option value="Kibana">Kibana</option>
                                         <option value="Superset">Superset</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-data-visualization" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -392,7 +392,7 @@
                             <!-- DevOps with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Devops</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="devops-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Docker">Docker</option>
                                         <option value="Kubernetes">Kubernetes</option>
@@ -430,7 +430,7 @@
                                         <option value="Nexus">Nexus</option>
                                         <option value="Artifactory">Artifactory</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-devops" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -446,7 +446,7 @@
                             <!-- Backend as a Service(BaaS) with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Backend as a Service(BaaS)</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="baas-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Firebase">Firebase</option>
                                         <option value="AWS Amplify">AWS Amplify</option>
@@ -464,7 +464,7 @@
                                         <option value="Strapi">Strapi</option>
                                         <option value="Directus">Directus</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-baas" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -480,7 +480,7 @@
                             <!-- Framework with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Framework</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="framework-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Express">Express</option>
                                         <option value="Django">Django</option>
@@ -506,7 +506,7 @@
                                         <option value="Strapi">Strapi</option>
                                         <option value="KeystoneJS">KeystoneJS</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-framework" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -522,7 +522,7 @@
                             <!-- Testing with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Testing</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="testing-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Jest">Jest</option>
                                         <option value="Cypress">Cypress</option>
@@ -546,7 +546,7 @@
                                         <option value="Gatling">Gatling</option>
                                         <option value="Locust">Locust</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-testing" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -562,7 +562,7 @@
                             <!-- Software with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Software</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="software-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="VS Code">VS Code</option>
                                         <option value="IntelliJ">IntelliJ</option>
@@ -590,7 +590,7 @@
                                         <option value="PyCharm">PyCharm</option>
                                         <option value="DataGrip">DataGrip</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-software" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -606,7 +606,7 @@
                             <!-- Static Site Generators with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Static Site Generators</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="static-site-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Gatsby">Gatsby</option>
                                         <option value="Next.js">Next.js</option>
@@ -625,7 +625,7 @@
                                         <option value="Stencil">Stencil</option>
                                         <option value="Scully">Scully</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-static-site" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -641,7 +641,7 @@
                             <!-- Game Engines with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Game Engines</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="game-engines-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="Unity">Unity</option>
                                         <option value="Unreal Engine">Unreal Engine</option>
@@ -659,7 +659,7 @@
                                         <option value="CryEngine">CryEngine</option>
                                         <option value="Amazon Lumberyard">Amazon Lumberyard</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-game-engines" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -675,7 +675,7 @@
                             <!-- Automation with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Automation</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="automation-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="GitHub Actions">GitHub Actions</option>
                                         <option value="Jenkins">Jenkins</option>
@@ -699,7 +699,7 @@
                                         <option value="Fabric">Fabric</option>
                                         <option value="SaltStack">SaltStack</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-automation" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -715,7 +715,7 @@
                             <!-- Other with Multiple Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Other</label>
-                                <div class="flex gap-2 mb-2">
+                                <div class="flex flex-col sm:flex-row gap-2 mb-2">
                                     <select id="other-select" multiple class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32">
                                         <option value="GraphQL">GraphQL</option>
                                         <option value="REST APIs">REST APIs</option>
@@ -736,7 +736,7 @@
                                         <option value="Networking">Networking</option>
                                         <option value="Distributed Systems">Distributed Systems</option>
                                     </select>
-                                    <div class="flex flex-col gap-2">
+                                    <div class="flex sm:flex-col gap-2">
                                         <button id="add-other" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                                             Add
                                         </button>
@@ -754,7 +754,7 @@
                     <!-- Social Links -->
                     <div class="border-t border-gray-200 pt-6">
                         <h3 class="text-lg font-semibold text-gray-900 mb-4">Social</h3>
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
                                 <i class="fab fa-github text-gray-700"></i>
                                 <input type="text" id="social-github" placeholder="GitHub Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
@@ -933,7 +933,7 @@
                     </div>
 
                     <!-- Actions -->
-                    <div class="flex space-x-3 pt-4">
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 pt-4">
                         <button id="reset-btn" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-all font-medium transform hover:-translate-y-0.5">
                             Reset
                         </button>
@@ -946,7 +946,7 @@
 
             <!-- Preview Section -->
             <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transform transition-all duration-300 hover:shadow-xl">
-                <div class="flex justify-between items-center mb-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                     <h2 class="text-xl font-semibold text-gray-900">Preview</h2>
                     <div class="flex space-x-2">
                         <button id="export-btn" class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transform hover:-translate-y-0.5 transition-all">
@@ -975,6 +975,43 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">GitHub Profile Generator</h3>
+                    <p class="text-gray-600">
+                        Create beautiful, professional READMEs with this easy-to-use generator. 
+                        Customize your GitHub profile with skills, social links, and badges.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Features</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Multiple skill selection</li>
+                        <li>• Social media integration</li>
+                        <li>• Add-ons and badges</li>
+                        <li>• Export/Import functionality</li>
+                        <li>• Responsive design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Resources</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">GitHub Repository</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Report Issues</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Contribute</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>© 2025 GitHub Profile README Generator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js" type="module"></script>
 </body>
