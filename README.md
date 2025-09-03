@@ -2,9 +2,9 @@
 
 Create beautiful, professional READMEs with this easy-to-use generator. Customize your GitHub profile with skills, social links, and badges.
 
-![GitHub](https://img.shields.io/github/license/yourusername/github-profile-generator)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/github-profile-generator)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/github-profile-generator)
+![GitHub](https://img.shields.io/github/license/PeshalaDilshan/GitHub-Profile-README-Generator)
+![GitHub stars](https://img.shields.io/github/stars/PeshalaDilshan/GitHub-Profile-README-Generator)
+![GitHub forks](https://img.shields.io/github/forks/PeshalaDilshan/GitHub-Profile-README-Generator)
 
 ## Features
 
@@ -88,12 +88,12 @@ Enhance your profile with:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/github-profile-generator.git
+   git clone https://github.com/PeshalaDilshan/GitHub-Profile-README-Generator.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd github-profile-generator
+   cd GitHub-Profile-README-Generator
    ```
 
 3. Open `index.html` in your browser
