@@ -67,7 +67,7 @@ class GitHubProfileGenerator {
             checkbox.addEventListener('change', () => this.generatePreview());
         });
 
-        // Selectable options for all skills
+        // Selectable options for all skills with multiple selection
         const skillTypes = [
             'skills', 'programming-languages', 'frontend', 'backend', 'mobile',
             'ai-ml', 'database', 'data-visualization', 'devops', 'baas',
@@ -77,15 +77,28 @@ class GitHubProfileGenerator {
 
         skillTypes.forEach(skillType => {
             const addButton = document.getElementById(`add-${skillType}`);
+            const clearButton = document.getElementById(`clear-${skillType}`);
+            
             if (addButton) {
                 addButton.addEventListener('click', () => {
                     const select = document.getElementById(`${skillType}-select`);
-                    const selectedValue = select.value;
-                    if (selectedValue && !this.selectedSkills[skillType].includes(selectedValue)) {
-                        this.selectedSkills[skillType].push(selectedValue);
-                        this.updateSelectedSkills(skillType);
-                    }
-                    select.value = '';
+                    const selectedOptions = Array.from(select.selectedOptions);
+                    const selectedValues = selectedOptions.map(option => option.value);
+                    
+                    selectedValues.forEach(value => {
+                        if (value && !this.selectedSkills[skillType].includes(value)) {
+                            this.selectedSkills[skillType].push(value);
+                        }
+                    });
+                    
+                    this.updateSelectedSkills(skillType);
+                });
+            }
+            
+            if (clearButton) {
+                clearButton.addEventListener('click', () => {
+                    this.selectedSkills[skillType] = [];
+                    this.updateSelectedSkills(skillType);
                 });
             }
         });
@@ -151,13 +164,16 @@ class GitHubProfileGenerator {
         let markdown = '';
         
         const title = document.getElementById('title').value;
-        if (title) markdown += `# ${title}\n\n`;
+        const name = document.getElementById('name').value;
+        if (title || name) {
+            markdown += `# ${title} ${name}\n\n`;
+        }
         
         const subtitle = document.getElementById('subtitle').value;
         if (subtitle) markdown += `## ${subtitle}\n\n`;
         
         const work = document.getElementById('work').value;
-        if (work) markdown += `### Work\n${work}\n\n`;
+        if (work) markdown += `${work}\n\n`;
         
         // Skills sections
         const sections = [
@@ -226,13 +242,49 @@ class GitHubProfileGenerator {
             markdown += `### Connect with me:\n${socialLinks.join('\n')}\n\n`;
         }
         
-        // Addons
+        // Add-ons
         if (document.getElementById('addon-buymeacoffee').checked) {
             markdown += `[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com)\n\n`;
         }
         
         if (document.getElementById('addon-kofi').checked) {
             markdown += `[![Ko-Fi](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com)\n\n`;
+        }
+        
+        if (document.getElementById('addon-visitors-count').checked) {
+            markdown += `![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fyourusername&label=VISITORS&labelColor=%23000000&countColor=%23007ec6)\n\n`;
+        }
+        
+        if (document.getElementById('addon-github-trophy').checked) {
+            markdown += `[![trophy](https://github-profile-trophy.vercel.app/?username=yourusername)](https://github.com/ryo-ma/github-profile-trophy)\n\n`;
+        }
+        
+        if (document.getElementById('addon-github-stats').checked) {
+            markdown += `[![GitHub stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical)](https://github.com/anuraghazra/github-readme-stats)\n\n`;
+        }
+        
+        if (document.getElementById('addon-top-skills').checked) {
+            markdown += `[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact)](https://github.com/anuraghazra/github-readme-stats)\n\n`;
+        }
+        
+        if (document.getElementById('addon-github-streak').checked) {
+            markdown += `[![GitHub Streak](https://streak-stats.demolab.com/?user=yourusername)](https://git.io/streak-stats)\n\n`;
+        }
+        
+        if (document.getElementById('addon-twitter-badge').checked) {
+            markdown += `[![Twitter Follow](https://img.shields.io/twitter/follow/yourusername?style=social)](https://twitter.com/yourusername)\n\n`;
+        }
+        
+        if (document.getElementById('addon-devto-blogs').checked) {
+            markdown += `<!-- BLOG-POST-LIST:START -->\n<!-- BLOG-POST-LIST:END -->\n\n`;
+        }
+        
+        if (document.getElementById('addon-medium-blogs').checked) {
+            markdown += `<!-- MEDIUM-BLOG-LIST:START -->\n<!-- MEDIUM-BLOG-LIST:END -->\n\n`;
+        }
+        
+        if (document.getElementById('addon-personal-blogs').checked) {
+            markdown += `<!-- PERSONAL-BLOG-LIST:START -->\n<!-- PERSONAL-BLOG-LIST:END -->\n\n`;
         }
         
         document.getElementById('preview-content').textContent = markdown;
