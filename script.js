@@ -2,6 +2,25 @@
 // GitHub Profile README Generator with all original features
 class GitHubProfileGenerator {
     constructor() {
+        this.selectedSkills = {
+            'skills': [],
+            'programming-languages': [],
+            'frontend': [],
+            'backend': [],
+            'mobile': [],
+            'ai-ml': [],
+            'database': [],
+            'data-visualization': [],
+            'devops': [],
+            'baas': [],
+            'framework': [],
+            'testing': [],
+            'software': [],
+            'static-site': [],
+            'game-engines': [],
+            'automation': [],
+            'other': []
+        };
         this.init();
     }
 
@@ -36,9 +55,9 @@ class GitHubProfileGenerator {
     }
 
     setupEventListeners() {
-        // Input handling
-        const inputs = document.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
+        // Input handling for regular text inputs
+        const textInputs = document.querySelectorAll('input[type="text"]:not([id$="-select"]):not([id$="-tags"]), textarea, select:not([id$="-select"])');
+        textInputs.forEach(input => {
             input.addEventListener('input', () => this.generatePreview());
         });
 
@@ -46,6 +65,29 @@ class GitHubProfileGenerator {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => this.generatePreview());
+        });
+
+        // Selectable options for all skills
+        const skillTypes = [
+            'skills', 'programming-languages', 'frontend', 'backend', 'mobile',
+            'ai-ml', 'database', 'data-visualization', 'devops', 'baas',
+            'framework', 'testing', 'software', 'static-site', 'game-engines',
+            'automation', 'other'
+        ];
+
+        skillTypes.forEach(skillType => {
+            const addButton = document.getElementById(`add-${skillType}`);
+            if (addButton) {
+                addButton.addEventListener('click', () => {
+                    const select = document.getElementById(`${skillType}-select`);
+                    const selectedValue = select.value;
+                    if (selectedValue && !this.selectedSkills[skillType].includes(selectedValue)) {
+                        this.selectedSkills[skillType].push(selectedValue);
+                        this.updateSelectedSkills(skillType);
+                    }
+                    select.value = '';
+                });
+            }
         });
 
         // Button event listeners
@@ -56,6 +98,32 @@ class GitHubProfileGenerator {
             document.getElementById('import-input').click();
         });
         document.getElementById('import-input').addEventListener('change', (event) => this.importData(event));
+    }
+
+    updateSelectedSkills(skillType) {
+        document.getElementById(skillType).value = this.selectedSkills[skillType].join(', ');
+        this.updateTagsForField(skillType, this.selectedSkills[skillType]);
+        this.generatePreview();
+    }
+
+    updateTagsForField(fieldId, values) {
+        const tagsContainer = document.getElementById(`${fieldId}-tags`);
+        tagsContainer.innerHTML = '';
+        
+        values.forEach(value => {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            tag.textContent = value;
+            tag.addEventListener('click', () => {
+                // Remove tag on click
+                this.selectedSkills[fieldId] = this.selectedSkills[fieldId].filter(item => item !== value);
+                this.updateSelectedSkills(fieldId);
+            });
+            tagsContainer.appendChild(tag);
+        });
+        
+        // Ensure tags are visible
+        tagsContainer.style.opacity = '1';
     }
 
     updateTags(fieldId, tagsContainerId) {
@@ -79,18 +147,6 @@ class GitHubProfileGenerator {
     }
 
     generateMarkdown() {
-        // Update all tags
-        const tagFields = [
-            'skills', 'programming-languages', 'frontend', 'backend', 'mobile',
-            'ai-ml', 'database', 'data-visualization', 'devops', 'baas',
-            'framework', 'testing', 'software', 'static-site', 'game-engines',
-            'automation', 'other'
-        ];
-        
-        tagFields.forEach(field => {
-            this.updateTags(field, `${field}-tags`);
-        });
-
         // Generate markdown
         let markdown = '';
         
@@ -105,30 +161,28 @@ class GitHubProfileGenerator {
         
         // Skills sections
         const sections = [
-            { id: 'skills', title: 'Skills' },
-            { id: 'programming-languages', title: 'Programming Languages' },
-            { id: 'frontend', title: 'Frontend Development' },
-            { id: 'backend', title: 'Backend Development' },
-            { id: 'mobile', title: 'Mobile App Development' },
-            { id: 'ai-ml', title: 'AI/ML' },
-            { id: 'database', title: 'Database' },
-            { id: 'data-visualization', title: 'Data Visualization' },
-            { id: 'devops', title: 'Devops' },
-            { id: 'baas', title: 'Backend as a Service(BaaS)' },
-            { id: 'framework', title: 'Framework' },
-            { id: 'testing', title: 'Testing' },
-            { id: 'software', title: 'Software' },
-            { id: 'static-site', title: 'Static Site Generators' },
-            { id: 'game-engines', title: 'Game Engines' },
-            { id: 'automation', title: 'Automation' },
-            { id: 'other', title: 'Other' }
+            { id: 'skills', title: 'Skills', values: this.selectedSkills['skills'] },
+            { id: 'programming-languages', title: 'Programming Languages', values: this.selectedSkills['programming-languages'] },
+            { id: 'frontend', title: 'Frontend Development', values: this.selectedSkills['frontend'] },
+            { id: 'backend', title: 'Backend Development', values: this.selectedSkills['backend'] },
+            { id: 'mobile', title: 'Mobile App Development', values: this.selectedSkills['mobile'] },
+            { id: 'ai-ml', title: 'AI/ML', values: this.selectedSkills['ai-ml'] },
+            { id: 'database', title: 'Database', values: this.selectedSkills['database'] },
+            { id: 'data-visualization', title: 'Data Visualization', values: this.selectedSkills['data-visualization'] },
+            { id: 'devops', title: 'Devops', values: this.selectedSkills['devops'] },
+            { id: 'baas', title: 'Backend as a Service(BaaS)', values: this.selectedSkills['baas'] },
+            { id: 'framework', title: 'Framework', values: this.selectedSkills['framework'] },
+            { id: 'testing', title: 'Testing', values: this.selectedSkills['testing'] },
+            { id: 'software', title: 'Software', values: this.selectedSkills['software'] },
+            { id: 'static-site', title: 'Static Site Generators', values: this.selectedSkills['static-site'] },
+            { id: 'game-engines', title: 'Game Engines', values: this.selectedSkills['game-engines'] },
+            { id: 'automation', title: 'Automation', values: this.selectedSkills['automation'] },
+            { id: 'other', title: 'Other', values: this.selectedSkills['other'] }
         ];
         
         sections.forEach(section => {
-            const values = document.getElementById(section.id).value
-                .split(',').map(item => item.trim()).filter(item => item);
-            if (values.length > 0) {
-                markdown += `### ${section.title}\n${values.join(', ')}\n\n`;
+            if (section.values.length > 0) {
+                markdown += `### ${section.title}\n${section.values.join(', ')}\n\n`;
             }
         });
         
@@ -208,9 +262,15 @@ class GitHubProfileGenerator {
         inputs.forEach(input => {
             if (input.type === 'checkbox') {
                 input.checked = false;
-            } else {
+            } else if (!input.id.endsWith('-select')) {
                 input.value = '';
             }
+        });
+        
+        // Reset all selected skills
+        Object.keys(this.selectedSkills).forEach(skillType => {
+            this.selectedSkills[skillType] = [];
+            this.updateSelectedSkills(skillType);
         });
         
         // Clear tags
@@ -224,13 +284,15 @@ class GitHubProfileGenerator {
     }
 
     exportData() {
-        const data = {};
-        const inputs = document.querySelectorAll('input, textarea, select');
+        const data = {
+            selectedSkills: this.selectedSkills
+        };
         
+        const inputs = document.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
             if (input.type === 'checkbox') {
                 data[input.id] = input.checked;
-            } else {
+            } else if (!input.id.endsWith('-select')) {
                 data[input.id] = input.value;
             }
         });
@@ -255,13 +317,24 @@ class GitHubProfileGenerator {
             try {
                 const data = JSON.parse(e.target.result);
                 
+                // Restore selected skills
+                if (data.selectedSkills) {
+                    this.selectedSkills = data.selectedSkills;
+                    Object.keys(this.selectedSkills).forEach(skillType => {
+                        this.updateSelectedSkills(skillType);
+                    });
+                }
+                
+                // Restore other inputs
                 Object.keys(data).forEach(key => {
-                    const element = document.getElementById(key);
-                    if (element) {
-                        if (element.type === 'checkbox') {
-                            element.checked = data[key];
-                        } else {
-                            element.value = data[key];
+                    if (key !== 'selectedSkills') {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            if (element.type === 'checkbox') {
+                                element.checked = data[key];
+                            } else if (!element.id.endsWith('-select')) {
+                                element.value = data[key];
+                            }
                         }
                     }
                 });
