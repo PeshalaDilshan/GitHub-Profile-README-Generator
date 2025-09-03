@@ -14,14 +14,19 @@ class GitHubProfileGenerator {
             ease: "none"
         });
 
-        // Animate skill sections
+        // Animate skill sections with staggered delay
         gsap.utils.toArray('.skill-section').forEach((element, i) => {
             gsap.from(element, {
                 opacity: 0,
                 y: 20,
                 duration: 0.5,
                 delay: i * 0.1,
-                ease: "power2.out"
+                ease: "power2.out",
+                onComplete: () => {
+                    // Ensure elements remain visible after animation
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
             });
         });
 
@@ -68,6 +73,9 @@ class GitHubProfileGenerator {
             tag.textContent = value;
             tagsContainer.appendChild(tag);
         });
+        
+        // Ensure tags are visible
+        tagsContainer.style.opacity = '1';
     }
 
     generateMarkdown() {
@@ -209,6 +217,7 @@ class GitHubProfileGenerator {
         const tagContainers = document.querySelectorAll('[id$="-tags"]');
         tagContainers.forEach(container => {
             container.innerHTML = '';
+            container.style.opacity = '1';
         });
         
         this.generatePreview();
