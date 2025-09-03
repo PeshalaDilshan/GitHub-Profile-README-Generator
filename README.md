@@ -164,4 +164,3 @@ If you find this project helpful, consider supporting:
 ---
 
 *© 2025 GitHub Profile README Generator. All rights reserved.*
-```
