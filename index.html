@@ -1,0 +1,343 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile README Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <div id="app" class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <div class="flex justify-center mb-4">
+                <div id="github-icon" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <i class="fab fa-github text-white text-3xl"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">GitHub Profile README Generator</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Create beautiful, professional READMEs with all the features from the original generator</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Form Section -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transform transition-all duration-300 hover:shadow-xl">
+                <div class="space-y-6">
+                    <!-- Basic Info -->
+                    <div class="skill-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Title</label>
+                        <input type="text" id="title" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+
+                    <div class="skill-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Subtitle</label>
+                        <input type="text" id="subtitle" placeholder="Software Developer | Open Source Enthusiast" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+
+                    <div class="skill-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Work</label>
+                        <textarea id="work" placeholder="Working at XYZ Company as a Senior Developer..." rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"></textarea>
+                    </div>
+
+                    <!-- Skills Sections -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Technical Skills</h3>
+                        <div class="space-y-5">
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Skills</label>
+                                <input type="text" id="skills" placeholder="Problem Solving, Team Leadership, Communication..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="skills-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Programming Languages</label>
+                                <input type="text" id="programming-languages" placeholder="JavaScript, Python, Java, C++, Go, Rust..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="programming-languages-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Frontend Development</label>
+                                <input type="text" id="frontend" placeholder="React, Vue, Angular, Svelte, Next.js, Gatsby..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="frontend-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Backend Development</label>
+                                <input type="text" id="backend" placeholder="Node.js, Express, Django, Flask, Spring, .NET..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="backend-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Mobile App Development</label>
+                                <input type="text" id="mobile" placeholder="React Native, Flutter, Swift, Kotlin, Xamarin..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="mobile-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">AI/ML</label>
+                                <input type="text" id="ai-ml" placeholder="TensorFlow, PyTorch, scikit-learn, Keras, OpenCV..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="ai-ml-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Database</label>
+                                <input type="text" id="database" placeholder="MongoDB, PostgreSQL, MySQL, Redis, Cassandra..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="database-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Data Visualization</label>
+                                <input type="text" id="data-visualization" placeholder="D3.js, Chart.js, Tableau, Power BI, Plotly..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="data-visualization-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Devops</label>
+                                <input type="text" id="devops" placeholder="Docker, Kubernetes, AWS, Azure, GCP, Jenkins..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="devops-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Backend as a Service(BaaS)</label>
+                                <input type="text" id="baas" placeholder="Firebase, AWS Amplify, Supabase, Parse..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="baas-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Framework</label>
+                                <input type="text" id="framework" placeholder="Express, Django, Flask, Spring, Laravel, Rails..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="framework-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Testing</label>
+                                <input type="text" id="testing" placeholder="Jest, Cypress, Selenium, Mocha, PyTest..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="testing-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Software</label>
+                                <input type="text" id="software" placeholder="VS Code, IntelliJ, Photoshop, Figma, Git, Docker..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="software-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Static Site Generators</label>
+                                <input type="text" id="static-site" placeholder="Gatsby, Next.js, Nuxt.js, Jekyll, Hugo..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="static-site-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Game Engines</label>
+                                <input type="text" id="game-engines" placeholder="Unity, Unreal Engine, Godot, Phaser..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="game-engines-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Automation</label>
+                                <input type="text" id="automation" placeholder="GitHub Actions, Jenkins, Ansible, Puppet..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="automation-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="skill-section">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Other</label>
+                                <input type="text" id="other" placeholder="GraphQL, REST APIs, Microservices, Blockchain..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div id="other-tags" class="mt-2 flex flex-wrap gap-2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Social</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-github text-gray-700"></i>
+                                <input type="text" id="social-github" placeholder="GitHub Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-twitter text-gray-700"></i>
+                                <input type="text" id="social-twitter" placeholder="Twitter Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-dev text-gray-700"></i>
+                                <input type="text" id="social-dev" placeholder="Dev.to Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-codepen text-gray-700"></i>
+                                <input type="text" id="social-codepen" placeholder="CodePen Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-code text-gray-700"></i>
+                                <input type="text" id="social-codesandbox" placeholder="CodeSandbox Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-stack-overflow text-gray-700"></i>
+                                <input type="text" id="social-stackoverflow" placeholder="Stack Overflow" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-linkedin text-gray-700"></i>
+                                <input type="text" id="social-linkedin" placeholder="LinkedIn Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-kaggle text-gray-700"></i>
+                                <input type="text" id="social-kaggle" placeholder="Kaggle Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-facebook text-gray-700"></i>
+                                <input type="text" id="social-facebook" placeholder="Facebook Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-instagram text-gray-700"></i>
+                                <input type="text" id="social-instagram" placeholder="Instagram Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-dribbble text-gray-700"></i>
+                                <input type="text" id="social-dribbble" placeholder="Dribbble Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-behance text-gray-700"></i>
+                                <input type="text" id="social-behance" placeholder="Behance Portfolio" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-hashnode text-gray-700"></i>
+                                <input type="text" id="social-hashnode" placeholder="Hashnode Blog" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-medium text-gray-700"></i>
+                                <input type="text" id="social-medium" placeholder="Medium Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-youtube text-gray-700"></i>
+                                <input type="text" id="social-youtube" placeholder="YouTube Channel" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-utensils text-gray-700"></i>
+                                <input type="text" id="social-codechef" placeholder="CodeChef Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-hackerrank text-gray-700"></i>
+                                <input type="text" id="social-hackerrank" placeholder="HackerRank Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-codeforces text-gray-700"></i>
+                                <input type="text" id="social-codeforces" placeholder="Codeforces Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-leetcode text-gray-700"></i>
+                                <input type="text" id="social-leetcode" placeholder="LeetCode Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-trophy text-gray-700"></i>
+                                <input type="text" id="social-topcoder" placeholder="TopCoder Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-laptop-code text-gray-700"></i>
+                                <input type="text" id="social-hackerearth" placeholder="HackerEarth Profile" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-book text-gray-700"></i>
+                                <input type="text" id="social-geeksforgeeks" placeholder="GeeksforGeeks" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fab fa-discord text-gray-700"></i>
+                                <input type="text" id="social-discord" placeholder="Discord Server" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg transition-all hover:bg-gray-100">
+                                <i class="fas fa-rss text-gray-700"></i>
+                                <input type="text" id="social-rssfeed" placeholder="RSS Feed" class="flex-1 bg-transparent px-2 py-1 focus:outline-none focus:ring-0 border-0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addons -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Add-ons</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg cursor-pointer transition-all hover:bg-gray-100">
+                                <input type="checkbox" id="addon-buymeacoffee" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
+                                <span class="text-gray-700">Buy Me A Coffee</span>
+                            </label>
+                            <label class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg cursor-pointer transition-all hover:bg-gray-100">
+                                <input type="checkbox" id="addon-kofi" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
+                                <span class="text-gray-700">Ko-Fi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Config Options -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Config options</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Theme</label>
+                                <select id="theme-select" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="default">Default</option>
+                                    <option value="dark">Dark</option>
+                                    <option value="light">Light</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="green">Green</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Badge Style</label>
+                                <select id="badge-style" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="flat">Flat</option>
+                                    <option value="flat-square">Flat Square</option>
+                                    <option value="for-the-badge">For the Badge</option>
+                                    <option value="plastic">Plastic</option>
+                                    <option value="social">Social</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex space-x-3 pt-4">
+                        <button id="reset-btn" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-all font-medium transform hover:-translate-y-0.5">
+                            Reset
+                        </button>
+                        <button id="copy-btn" class="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all font-medium shadow-lg transform hover:-translate-y-0.5">
+                            Generate README
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 transform transition-all duration-300 hover:shadow-xl">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Preview</h2>
+                    <div class="flex space-x-2">
+                        <button id="export-btn" class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transform hover:-translate-y-0.5 transition-all">
+                            Export
+                        </button>
+                        <input type="file" id="import-input" class="hidden">
+                        <button id="import-btn" class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 font-medium transform hover:-translate-y-0.5 transition-all">
+                            Import
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-5 h-[500px] overflow-auto">
+                    <pre id="preview-content" class="text-sm text-gray-800 whitespace-pre-wrap font-mono"></pre>
+                </div>
+                
+                <div class="mt-6 p-4 bg-blue-50 rounded-xl">
+                    <h3 class="font-medium text-blue-900 mb-2">Tips</h3>
+                    <ul class="text-sm text-blue-800 space-y-1">
+                        <li>• Enter the downloaded JSON text to restore.</li>
+                        <li>• Press reset to reset the form.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
