@@ -47,105 +47,632 @@
                     <div class="border-t border-gray-200 pt-6">
                         <h3 class="text-lg font-semibold text-gray-900 mb-4">Technical Skills</h3>
                         <div class="space-y-5">
+                            <!-- Skills with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Skills</label>
-                                <input type="text" id="skills" placeholder="Problem Solving, Team Leadership, Communication..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="skills-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a skill</option>
+                                        <option value="Problem Solving">Problem Solving</option>
+                                        <option value="Team Leadership">Team Leadership</option>
+                                        <option value="Communication">Communication</option>
+                                        <option value="Project Management">Project Management</option>
+                                        <option value="Agile Methodologies">Agile Methodologies</option>
+                                        <option value="Scrum Master">Scrum Master</option>
+                                        <option value="Product Management">Product Management</option>
+                                        <option value="UX Design">UX Design</option>
+                                        <option value="UI Design">UI Design</option>
+                                        <option value="Technical Writing">Technical Writing</option>
+                                        <option value="Public Speaking">Public Speaking</option>
+                                        <option value="Mentoring">Mentoring</option>
+                                        <option value="Code Review">Code Review</option>
+                                        <option value="Pair Programming">Pair Programming</option>
+                                        <option value="DevOps">DevOps</option>
+                                        <option value="Cloud Architecture">Cloud Architecture</option>
+                                        <option value="System Design">System Design</option>
+                                        <option value="API Design">API Design</option>
+                                        <option value="Database Design">Database Design</option>
+                                        <option value="Security">Security</option>
+                                        <option value="Performance Optimization">Performance Optimization</option>
+                                        <option value="Debugging">Debugging</option>
+                                        <option value="Testing">Testing</option>
+                                        <option value="Documentation">Documentation</option>
+                                        <option value="Open Source">Open Source</option>
+                                    </select>
+                                    <button id="add-skills" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="skills" placeholder="Selected skills will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="skills-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Programming Languages with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Programming Languages</label>
-                                <input type="text" id="programming-languages" placeholder="JavaScript, Python, Java, C++, Go, Rust..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="programming-languages-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a language</option>
+                                        <option value="JavaScript">JavaScript</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Java">Java</option>
+                                        <option value="C++">C++</option>
+                                        <option value="C#">C#</option>
+                                        <option value="Go">Go</option>
+                                        <option value="Rust">Rust</option>
+                                        <option value="Swift">Swift</option>
+                                        <option value="Kotlin">Kotlin</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="Ruby">Ruby</option>
+                                        <option value="TypeScript">TypeScript</option>
+                                        <option value="Dart">Dart</option>
+                                        <option value="R">R</option>
+                                        <option value="Scala">Scala</option>
+                                        <option value="Elixir">Elixir</option>
+                                        <option value="Haskell">Haskell</option>
+                                        <option value="Lua">Lua</option>
+                                        <option value="Perl">Perl</option>
+                                        <option value="Shell">Shell</option>
+                                        <option value="MATLAB">MATLAB</option>
+                                        <option value="Julia">Julia</option>
+                                        <option value="Clojure">Clojure</option>
+                                        <option value="Groovy">Groovy</option>
+                                        <option value="F#">F#</option>
+                                        <option value="OCaml">OCaml</option>
+                                        <option value="Erlang">Erlang</option>
+                                        <option value="Crystal">Crystal</option>
+                                        <option value="Nim">Nim</option>
+                                        <option value="Zig">Zig</option>
+                                        <option value="V">V</option>
+                                        <option value="Assembly">Assembly</option>
+                                        <option value="SQL">SQL</option>
+                                        <option value="Solidity">Solidity</option>
+                                    </select>
+                                    <button id="add-programming-language" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="programming-languages" placeholder="Selected languages will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="programming-languages-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Frontend Development with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Frontend Development</label>
-                                <input type="text" id="frontend" placeholder="React, Vue, Angular, Svelte, Next.js, Gatsby..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="frontend-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a technology</option>
+                                        <option value="React">React</option>
+                                        <option value="Vue">Vue</option>
+                                        <option value="Angular">Angular</option>
+                                        <option value="Svelte">Svelte</option>
+                                        <option value="Next.js">Next.js</option>
+                                        <option value="Gatsby">Gatsby</option>
+                                        <option value="Nuxt.js">Nuxt.js</option>
+                                        <option value="Ember">Ember</option>
+                                        <option value="Backbone">Backbone</option>
+                                        <option value="jQuery">jQuery</option>
+                                        <option value="Bootstrap">Bootstrap</option>
+                                        <option value="Tailwind CSS">Tailwind CSS</option>
+                                        <option value="Sass">Sass</option>
+                                        <option value="Less">Less</option>
+                                        <option value="Webpack">Webpack</option>
+                                        <option value="Vite">Vite</option>
+                                        <option value="Rollup">Rollup</option>
+                                        <option value="Parcel">Parcel</option>
+                                        <option value="Grunt">Grunt</option>
+                                        <option value="Gulp">Gulp</option>
+                                        <option value="Material-UI">Material-UI</option>
+                                        <option value="Ant Design">Ant Design</option>
+                                        <option value="Chakra UI">Chakra UI</option>
+                                        <option value="Bulma">Bulma</option>
+                                        <option value="Foundation">Foundation</option>
+                                        <option value="Semantic UI">Semantic UI</option>
+                                    </select>
+                                    <button id="add-frontend" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="frontend" placeholder="Selected technologies will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="frontend-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Backend Development with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Backend Development</label>
-                                <input type="text" id="backend" placeholder="Node.js, Express, Django, Flask, Spring, .NET..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="backend-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a technology</option>
+                                        <option value="Node.js">Node.js</option>
+                                        <option value="Express">Express</option>
+                                        <option value="Django">Django</option>
+                                        <option value="Flask">Flask</option>
+                                        <option value="Spring">Spring</option>
+                                        <option value=".NET">.NET</option>
+                                        <option value="Laravel">Laravel</option>
+                                        <option value="Ruby on Rails">Ruby on Rails</option>
+                                        <option value="FastAPI">FastAPI</option>
+                                        <option value="NestJS">NestJS</option>
+                                        <option value="Koa">Koa</option>
+                                        <option value="Hapi">Hapi</option>
+                                        <option value="Gin">Gin</option>
+                                        <option value="Echo">Echo</option>
+                                        <option value="Actix">Actix</option>
+                                        <option value="Rocket">Rocket</option>
+                                        <option value="Phoenix">Phoenix</option>
+                                        <option value="AdonisJS">AdonisJS</option>
+                                        <option value="Sails.js">Sails.js</option>
+                                        <option value="LoopBack">LoopBack</option>
+                                        <option value="FeathersJS">FeathersJS</option>
+                                        <option value="Meteor">Meteor</option>
+                                        <option value="Strapi">Strapi</option>
+                                        <option value="KeystoneJS">KeystoneJS</option>
+                                    </select>
+                                    <button id="add-backend" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="backend" placeholder="Selected technologies will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="backend-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Mobile App Development with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Mobile App Development</label>
-                                <input type="text" id="mobile" placeholder="React Native, Flutter, Swift, Kotlin, Xamarin..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="mobile-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a technology</option>
+                                        <option value="React Native">React Native</option>
+                                        <option value="Flutter">Flutter</option>
+                                        <option value="Swift">Swift</option>
+                                        <option value="Kotlin">Kotlin</option>
+                                        <option value="Xamarin">Xamarin</option>
+                                        <option value="Ionic">Ionic</option>
+                                        <option value="Cordova">Cordova</option>
+                                        <option value="NativeScript">NativeScript</option>
+                                        <option value="Java">Java</option>
+                                        <option value="Objective-C">Objective-C</option>
+                                        <option value="Dart">Dart</option>
+                                        <option value="Flutter CLI">Flutter CLI</option>
+                                        <option value="React Native CLI">React Native CLI</option>
+                                        <option value="Expo">Expo</option>
+                                        <option value="Capacitor">Capacitor</option>
+                                    </select>
+                                    <button id="add-mobile" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="mobile" placeholder="Selected technologies will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="mobile-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- AI/ML with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">AI/ML</label>
-                                <input type="text" id="ai-ml" placeholder="TensorFlow, PyTorch, scikit-learn, Keras, OpenCV..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="ai-ml-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a technology</option>
+                                        <option value="TensorFlow">TensorFlow</option>
+                                        <option value="PyTorch">PyTorch</option>
+                                        <option value="scikit-learn">scikit-learn</option>
+                                        <option value="Keras">Keras</option>
+                                        <option value="OpenCV">OpenCV</option>
+                                        <option value="Pandas">Pandas</option>
+                                        <option value="NumPy">NumPy</option>
+                                        <option value="SciPy">SciPy</option>
+                                        <option value="Matplotlib">Matplotlib</option>
+                                        <option value="Seaborn">Seaborn</option>
+                                        <option value="XGBoost">XGBoost</option>
+                                        <option value="LightGBM">LightGBM</option>
+                                        <option value="Hugging Face">Hugging Face</option>
+                                        <option value="spaCy">spaCy</option>
+                                        <option value="NLTK">NLTK</option>
+                                        <option value="Transformers">Transformers</option>
+                                        <option value="Fast.ai">Fast.ai</option>
+                                        <option value="Theano">Theano</option>
+                                        <option value="Caffe">Caffe</option>
+                                        <option value="MXNet">MXNet</option>
+                                        <option value="Torch">Torch</option>
+                                        <option value="AllenNLP">AllenNLP</option>
+                                        <option value="Flair">Flair</option>
+                                        <option value="Stanza">Stanza</option>
+                                    </select>
+                                    <button id="add-ai-ml" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="ai-ml" placeholder="Selected technologies will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="ai-ml-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Database with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Database</label>
-                                <input type="text" id="database" placeholder="MongoDB, PostgreSQL, MySQL, Redis, Cassandra..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="database-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a database</option>
+                                        <option value="MongoDB">MongoDB</option>
+                                        <option value="PostgreSQL">PostgreSQL</option>
+                                        <option value="MySQL">MySQL</option>
+                                        <option value="Redis">Redis</option>
+                                        <option value="Cassandra">Cassandra</option>
+                                        <option value="Elasticsearch">Elasticsearch</option>
+                                        <option value="DynamoDB">DynamoDB</option>
+                                        <option value="Firebase">Firebase</option>
+                                        <option value="SQLite">SQLite</option>
+                                        <option value="MariaDB">MariaDB</option>
+                                        <option value="Oracle">Oracle</option>
+                                        <option value="SQL Server">SQL Server</option>
+                                        <option value="Neo4j">Neo4j</option>
+                                        <option value="CouchDB">CouchDB</option>
+                                        <option value="Couchbase">Couchbase</option>
+                                        <option value="InfluxDB">InfluxDB</option>
+                                        <option value="TimescaleDB">TimescaleDB</option>
+                                        <option value="CockroachDB">CockroachDB</option>
+                                        <option value="FaunaDB">FaunaDB</option>
+                                        <option value="ArangoDB">ArangoDB</option>
+                                        <option value="RethinkDB">RethinkDB</option>
+                                    </select>
+                                    <button id="add-database" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="database" placeholder="Selected databases will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="database-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Data Visualization with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Data Visualization</label>
-                                <input type="text" id="data-visualization" placeholder="D3.js, Chart.js, Tableau, Power BI, Plotly..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="data-visualization-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a tool</option>
+                                        <option value="D3.js">D3.js</option>
+                                        <option value="Chart.js">Chart.js</option>
+                                        <option value="Tableau">Tableau</option>
+                                        <option value="Power BI">Power BI</option>
+                                        <option value="Plotly">Plotly</option>
+                                        <option value="Bokeh">Bokeh</option>
+                                        <option value="ggplot2">ggplot2</option>
+                                        <option value="Altair">Altair</option>
+                                        <option value="ECharts">ECharts</option>
+                                        <option value="Highcharts">Highcharts</option>
+                                        <option value="Recharts">Recharts</option>
+                                        <option value="Vega">Vega</option>
+                                        <option value="Observable">Observable</option>
+                                        <option value="Grafana">Grafana</option>
+                                        <option value="Kibana">Kibana</option>
+                                        <option value="Superset">Superset</option>
+                                    </select>
+                                    <button id="add-data-visualization" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="data-visualization" placeholder="Selected tools will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="data-visualization-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- DevOps with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Devops</label>
-                                <input type="text" id="devops" placeholder="Docker, Kubernetes, AWS, Azure, GCP, Jenkins..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="devops-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a tool</option>
+                                        <option value="Docker">Docker</option>
+                                        <option value="Kubernetes">Kubernetes</option>
+                                        <option value="AWS">AWS</option>
+                                        <option value="Azure">Azure</option>
+                                        <option value="GCP">GCP</option>
+                                        <option value="Jenkins">Jenkins</option>
+                                        <option value="Terraform">Terraform</option>
+                                        <option value="Ansible">Ansible</option>
+                                        <option value="Puppet">Puppet</option>
+                                        <option value="Chef">Chef</option>
+                                        <option value="Prometheus">Prometheus</option>
+                                        <option value="Grafana">Grafana</option>
+                                        <option value="ELK Stack">ELK Stack</option>
+                                        <option value="GitLab CI">GitLab CI</option>
+                                        <option value="GitHub Actions">GitHub Actions</option>
+                                        <option value="CircleCI">CircleCI</option>
+                                        <option value="Travis CI">Travis CI</option>
+                                        <option value="Bamboo">Bamboo</option>
+                                        <option value="TeamCity">TeamCity</option>
+                                        <option value="Spinnaker">Spinnaker</option>
+                                        <option value="ArgoCD">ArgoCD</option>
+                                        <option value="Helm">Helm</option>
+                                        <option value="Istio">Istio</option>
+                                        <option value="Linkerd">Linkerd</option>
+                                        <option value="Consul">Consul</option>
+                                        <option value="Vault">Vault</option>
+                                        <option value="Packer">Packer</option>
+                                        <option value="Vagrant">Vagrant</option>
+                                        <option value="OpenShift">OpenShift</option>
+                                        <option value="Rancher">Rancher</option>
+                                        <option value="Portainer">Portainer</option>
+                                        <option value="Harbor">Harbor</option>
+                                        <option value="SonarQube">SonarQube</option>
+                                        <option value="Nexus">Nexus</option>
+                                        <option value="Artifactory">Artifactory</option>
+                                    </select>
+                                    <button id="add-devops" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="devops" placeholder="Selected tools will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="devops-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Backend as a Service(BaaS) with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Backend as a Service(BaaS)</label>
-                                <input type="text" id="baas" placeholder="Firebase, AWS Amplify, Supabase, Parse..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="baas-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a service</option>
+                                        <option value="Firebase">Firebase</option>
+                                        <option value="AWS Amplify">AWS Amplify</option>
+                                        <option value="Supabase">Supabase</option>
+                                        <option value="Parse">Parse</option>
+                                        <option value="Back4App">Back4App</option>
+                                        <option value="Backendless">Backendless</option>
+                                        <option value="Kinvey">Kinvey</option>
+                                        <option value="Appwrite">Appwrite</option>
+                                        <option value="Nhost">Nhost</option>
+                                        <option value="8base">8base</option>
+                                        <option value="Graphcool">Graphcool</option>
+                                        <option value="Hasura">Hasura</option>
+                                        <option value="Prisma">Prisma</option>
+                                        <option value="Strapi">Strapi</option>
+                                        <option value="Directus">Directus</option>
+                                    </select>
+                                    <button id="add-baas" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="baas" placeholder="Selected services will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="baas-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Framework with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Framework</label>
-                                <input type="text" id="framework" placeholder="Express, Django, Flask, Spring, Laravel, Rails..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="framework-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a framework</option>
+                                        <option value="Express">Express</option>
+                                        <option value="Django">Django</option>
+                                        <option value="Flask">Flask</option>
+                                        <option value="Spring">Spring</option>
+                                        <option value="Laravel">Laravel</option>
+                                        <option value="Rails">Rails</option>
+                                        <option value=".NET">.NET</option>
+                                        <option value="FastAPI">FastAPI</option>
+                                        <option value="NestJS">NestJS</option>
+                                        <option value="Koa">Koa</option>
+                                        <option value="Hapi">Hapi</option>
+                                        <option value="Gin">Gin</option>
+                                        <option value="Echo">Echo</option>
+                                        <option value="Actix">Actix</option>
+                                        <option value="Rocket">Rocket</option>
+                                        <option value="Phoenix">Phoenix</option>
+                                        <option value="AdonisJS">AdonisJS</option>
+                                        <option value="Sails.js">Sails.js</option>
+                                        <option value="LoopBack">LoopBack</option>
+                                        <option value="FeathersJS">FeathersJS</option>
+                                        <option value="Meteor">Meteor</option>
+                                        <option value="Strapi">Strapi</option>
+                                        <option value="KeystoneJS">KeystoneJS</option>
+                                    </select>
+                                    <button id="add-framework" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="framework" placeholder="Selected frameworks will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="framework-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Testing with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Testing</label>
-                                <input type="text" id="testing" placeholder="Jest, Cypress, Selenium, Mocha, PyTest..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="testing-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a tool</option>
+                                        <option value="Jest">Jest</option>
+                                        <option value="Cypress">Cypress</option>
+                                        <option value="Selenium">Selenium</option>
+                                        <option value="Mocha">Mocha</option>
+                                        <option value="PyTest">PyTest</option>
+                                        <option value="JUnit">JUnit</option>
+                                        <option value="TestNG">TestNG</option>
+                                        <option value="Karma">Karma</option>
+                                        <option value="Protractor">Protractor</option>
+                                        <option value="Puppeteer">Puppeteer</option>
+                                        <option value="Enzyme">Enzyme</option>
+                                        <option value="Supertest">Supertest</option>
+                                        <option value="Chai">Chai</option>
+                                        <option value="Sinon">Sinon</option>
+                                        <option value="Cucumber">Cucumber</option>
+                                        <option value="Postman">Postman</option>
+                                        <option value="Newman">Newman</option>
+                                        <option value="SoapUI">SoapUI</option>
+                                        <option value="JMeter">JMeter</option>
+                                        <option value="Gatling">Gatling</option>
+                                        <option value="Locust">Locust</option>
+                                    </select>
+                                    <button id="add-testing" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="testing" placeholder="Selected tools will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="testing-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Software with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Software</label>
-                                <input type="text" id="software" placeholder="VS Code, IntelliJ, Photoshop, Figma, Git, Docker..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="software-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a software</option>
+                                        <option value="VS Code">VS Code</option>
+                                        <option value="IntelliJ">IntelliJ</option>
+                                        <option value="Photoshop">Photoshop</option>
+                                        <option value="Figma">Figma</option>
+                                        <option value="Git">Git</option>
+                                        <option value="Docker">Docker</option>
+                                        <option value="Postman">Postman</option>
+                                        <option value="Jira">Jira</option>
+                                        <option value="Slack">Slack</option>
+                                        <option value="Trello">Trello</option>
+                                        <option value="Notion">Notion</option>
+                                        <option value="Obsidian">Obsidian</option>
+                                        <option value="Vim">Vim</option>
+                                        <option value="Emacs">Emacs</option>
+                                        <option value="Sublime Text">Sublime Text</option>
+                                        <option value="Atom">Atom</option>
+                                        <option value="Eclipse">Eclipse</option>
+                                        <option value="NetBeans">NetBeans</option>
+                                        <option value="Xcode">Xcode</option>
+                                        <option value="Android Studio">Android Studio</option>
+                                        <option value="Visual Studio">Visual Studio</option>
+                                        <option value="Rider">Rider</option>
+                                        <option value="WebStorm">WebStorm</option>
+                                        <option value="PyCharm">PyCharm</option>
+                                        <option value="DataGrip">DataGrip</option>
+                                    </select>
+                                    <button id="add-software" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="software" placeholder="Selected software will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="software-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Static Site Generators with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Static Site Generators</label>
-                                <input type="text" id="static-site" placeholder="Gatsby, Next.js, Nuxt.js, Jekyll, Hugo..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="static-site-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a generator</option>
+                                        <option value="Gatsby">Gatsby</option>
+                                        <option value="Next.js">Next.js</option>
+                                        <option value="Nuxt.js">Nuxt.js</option>
+                                        <option value="Jekyll">Jekyll</option>
+                                        <option value="Hugo">Hugo</option>
+                                        <option value="Eleventy">Eleventy</option>
+                                        <option value="Gridsome">Gridsome</option>
+                                        <option value="VuePress">VuePress</option>
+                                        <option value="Docusaurus">Docusaurus</option>
+                                        <option value="Astro">Astro</option>
+                                        <option value="SvelteKit">SvelteKit</option>
+                                        <option value="Zola">Zola</option>
+                                        <option value="Phenomic">Phenomic</option>
+                                        <option value="Preact">Preact</option>
+                                        <option value="Stencil">Stencil</option>
+                                        <option value="Scully">Scully</option>
+                                    </select>
+                                    <button id="add-static-site" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="static-site" placeholder="Selected generators will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="static-site-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Game Engines with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Game Engines</label>
-                                <input type="text" id="game-engines" placeholder="Unity, Unreal Engine, Godot, Phaser..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="game-engines-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select an engine</option>
+                                        <option value="Unity">Unity</option>
+                                        <option value="Unreal Engine">Unreal Engine</option>
+                                        <option value="Godot">Godot</option>
+                                        <option value="Phaser">Phaser</option>
+                                        <option value="MonoGame">MonoGame</option>
+                                        <option value="LibGDX">LibGDX</option>
+                                        <option value="Panda3D">Panda3D</option>
+                                        <option value="Babylon.js">Babylon.js</option>
+                                        <option value="Three.js">Three.js</option>
+                                        <option value="Construct">Construct</option>
+                                        <option value="Defold">Defold</option>
+                                        <option value="LÖVE">LÖVE</option>
+                                        <option value="GameMaker Studio">GameMaker Studio</option>
+                                        <option value="CryEngine">CryEngine</option>
+                                        <option value="Amazon Lumberyard">Amazon Lumberyard</option>
+                                    </select>
+                                    <button id="add-game-engines" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="game-engines" placeholder="Selected engines will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="game-engines-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Automation with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Automation</label>
-                                <input type="text" id="automation" placeholder="GitHub Actions, Jenkins, Ansible, Puppet..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="automation-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a tool</option>
+                                        <option value="GitHub Actions">GitHub Actions</option>
+                                        <option value="Jenkins">Jenkins</option>
+                                        <option value="Ansible">Ansible</option>
+                                        <option value="Puppet">Puppet</option>
+                                        <option value="Chef">Chef</option>
+                                        <option value="Terraform">Terraform</option>
+                                        <option value="Pulumi">Pulumi</option>
+                                        <option value="Kubernetes">Kubernetes</option>
+                                        <option value="Docker">Docker</option>
+                                        <option value="Shell Scripts">Shell Scripts</option>
+                                        <option value="Python Scripts">Python Scripts</option>
+                                        <option value="Groovy">Groovy</option>
+                                        <option value="PowerShell">PowerShell</option>
+                                        <option value="Bash">Bash</option>
+                                        <option value="Make">Make</option>
+                                        <option value="Gradle">Gradle</option>
+                                        <option value="Maven">Maven</option>
+                                        <option value="Ant">Ant</option>
+                                        <option value="Rake">Rake</option>
+                                        <option value="Fabric">Fabric</option>
+                                        <option value="SaltStack">SaltStack</option>
+                                    </select>
+                                    <button id="add-automation" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="automation" placeholder="Selected tools will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="automation-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
 
+                            <!-- Other with Selectable Options -->
                             <div class="skill-section">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Other</label>
-                                <input type="text" id="other" placeholder="GraphQL, REST APIs, Microservices, Blockchain..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                <div class="flex gap-2 mb-2">
+                                    <select id="other-select" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a technology</option>
+                                        <option value="GraphQL">GraphQL</option>
+                                        <option value="REST APIs">REST APIs</option>
+                                        <option value="Microservices">Microservices</option>
+                                        <option value="Blockchain">Blockchain</option>
+                                        <option value="IoT">IoT</option>
+                                        <option value="AR/VR">AR/VR</option>
+                                        <option value="WebAssembly">WebAssembly</option>
+                                        <option value="Electron">Electron</option>
+                                        <option value="Progressive Web Apps">Progressive Web Apps</option>
+                                        <option value="Serverless">Serverless</option>
+                                        <option value="CDN">CDN</option>
+                                        <option value="SEO">SEO</option>
+                                        <option value="Accessibility">Accessibility</option>
+                                        <option value="Performance Optimization">Performance Optimization</option>
+                                        <option value="Security">Security</option>
+                                        <option value="Cryptography">Cryptography</option>
+                                        <option value="Networking">Networking</option>
+                                        <option value="Distributed Systems">Distributed Systems</option>
+                                    </select>
+                                    <button id="add-other" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                                        Add
+                                    </button>
+                                </div>
+                                <input type="text" id="other" placeholder="Selected technologies will appear here..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" readonly>
                                 <div id="other-tags" class="mt-2 flex flex-wrap gap-2"></div>
                             </div>
                         </div>
