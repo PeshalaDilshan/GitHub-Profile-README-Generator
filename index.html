@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile README Generator</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Simple Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v11.0.0/font/simple-icons.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header with GitHub Icon -->
+        <header class="mb-12 text-center">
+            <div class="flex justify-center mb-4">
+                <div id="github-icon" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <i class="fab fa-github text-white text-3xl"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">GitHub Profile README Generator</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Create an impressive GitHub profile README with this easy-to-use generator. Select your skills, add social links, and customize your profile.</p>
+        </header>
+
+        <!-- GitHub Username Input -->
+        <div class="github-header animate-in">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-semibold mb-2">Start with your GitHub username</h2>
+                    <p class="text-blue-100">We'll fetch your public information to prefill the form</p>
+                </div>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 w-full md:w-auto">
+                    <input type="text" id="githubUsername" class="px-4 py-2 rounded-lg bg-white bg-opacity-10 text-white placeholder-blue-200 border border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300" placeholder="Enter GitHub username">
+                    <button id="fetchGitHub" class="btn btn-primary whitespace-nowrap">
+                        <i class="fas fa-download mr-2"></i>Fetch Details
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <!-- Left Column - Form -->
+            <div class="form-column">
+                <!-- Personal Info Card -->
+                <div class="card animate-in">
+                    <h2 class="section-title"><i class="fas fa-user"></i> Personal Information</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                            <input type="text" id="nameInput" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Bio</label>
+                            <textarea id="bioInput" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" rows="3" placeholder="A short bio about yourself"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Location</label>
+                            <input type="text" id="locationInput" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="Earth">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Company</label>
+                            <input type="text" id="companyInput" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="Your company">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Website/Blog</label>
+                            <input type="text" id="websiteInput" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="https://yourwebsite.com">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Card -->
+                <div class="card animate-in">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="section-title"><i class="fas fa-tools"></i> Technical Skills</h2>
+                        <button id="clearSkills" class="btn btn-secondary text-xs">
+                            <i class="fas fa-times mr-1"></i>Clear
+                        </button>
+                    </div>
+                    <div class="mb-4 flex">
+                        <input type="text" class="flex-grow p-3 rounded-l-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="Add custom skill..." id="customSkillInput">
+                        <button id="addSkillBtn" class="bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 transition">
+                            <i class="fas fa-plus mx-4"></i>
+                        </button>
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" class="w-full p-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition" placeholder="Search skills..." id="skillSearch">
+                    </div>
+                    <div class="skills-grid max-h-80 overflow-y-auto custom-scrollbar p-1" id="skillsContainer">
+                        <!-- Skills will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Column - Social & Addons -->
+            <div class="form-column">
+                <!-- Social Media Card -->
+                <div class="card animate-in">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="section-title"><i class="fas fa-share-alt"></i> Social Media</h2>
+                        <button id="clearSocial" class="btn btn-secondary text-xs">
+                            <i class="fas fa-times mr-1"></i>Clear
+                        </button>
+                    </div>
+                    <div class="space-y-4" id="socialContainer">
+                        <!-- Social media inputs will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Add-ons Card -->
+                <div class="card animate-in">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="section-title"><i class="fas fa-plus-square"></i> Add-ons & Badges</h2>
+                        <button id="clearAddons" class="btn btn-secondary text-xs">
+                            <i class="fas fa-times mr-1"></i>Clear
+                        </button>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="githubStats" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="githubStats" class="text-slate-700">GitHub Stats Card</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="githubStreak" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="githubStreak" class="text-slate-700">GitHub Streak Stats</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="githubTrophies" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="githubTrophies" class="text-slate-700">GitHub Trophies</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="visitorBadge" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="visitorBadge" class="text-slate-700">Visitor Count Badge</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="buyMeCoffee" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="buyMeCoffee" class="text-slate-700">Buy Me a Coffee Badge</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="koFi" class="mr-3 h-5 w-5 text-blue-500 rounded focus:ring-2 focus:ring-blue-200">
+                            <label for="koFi" class="text-slate-700">Ko-fi Badge</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="card animate-in">
+                    <div class="flex space-x-4 animate-in">
+                        <button id="resetBtn" class="btn btn-danger flex-1">
+                            <i class="fas fa-redo mr-2"></i>Reset All
+                        </button>
+                        <button id="generateBtn" class="btn btn-success flex-1">
+                            <i class="fas fa-code mr-2"></i>Generate README
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Preview -->
+            <div class="preview-column">
+                <div class="card h-full">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="section-title"><i class="fas fa-eye"></i> README Preview</h2>
+                        <div class="flex space-x-2">
+                            <button id="importBtn" class="btn btn-secondary">
+                                <i class="fas fa-file-import mr-2"></i>Import
+                            </button>
+                            <button id="exportBtn" class="btn btn-primary">
+                                <i class="fas fa-file-export mr-2"></i>Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="preview-area bg-slate-50 text-slate-800 p-6 rounded-lg overflow-auto max-h-[70vh] custom-scrollbar border border-slate-200">
+                        <div id="previewContent">
+                            <!-- Preview content will be generated by JavaScript -->
+                            <div class="text-center py-12 text-slate-400">
+                                <i class="fas fa-code text-5xl mb-4 opacity-50"></i>
+                                <p class="text-lg">Your README preview will appear here</p>
+                                <p class="text-sm mt-2">Click "Generate README" to create your profile</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-3">
+                        <button id="copyBtn" class="btn btn-secondary">
+                            <i class="fas fa-copy mr-2"></i>Copy Markdown
+                        </button>
+                        <button id="downloadBtn" class="btn btn-primary">
+                            <i class="fas fa-download mr-2"></i>Download README.md
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-8 text-center text-slate-600 border-t border-slate-200">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About This Tool</h3>
+                    <p class="text-sm">This GitHub Profile README Generator helps developers create beautiful profile READMEs quickly and easily.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Features</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>GitHub Integration</li>
+                        <li>Skill Selection</li>
+                        <li>Social Media Links</li>
+                        <li>Add-ons & Badges</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://github.com/yourusername" class="text-blue-500 hover:text-blue-700"><i class="fab fa-github text-xl"></i></a>
+                        <a href="https://twitter.com/yourusername" class="text-blue-500 hover:text-blue-700"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-sm">Made with <i class="fas fa-heart text-red-500"></i> for developers</p>
+        </div>
+    </footer>
+
+    <!-- Modal for generated markdown -->
+    <div id="markdownModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-6 w-11/12 md:w-3/4 lg:w-2/3 max-h-[80vh] overflow-y-auto custom-scrollbar">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold text-slate-800">Generated Markdown</h3>
+                <button id="closeModal" class="text-2xl text-slate-500 hover:text-slate-700">&times;</button>
+            </div>
+            <pre class="p-4 rounded bg-slate-100 overflow-x-auto text-sm" id="markdownContent"></pre>
+            <div class="mt-4 flex justify-end space-x-3">
+                <button id="copyModalBtn" class="btn btn-secondary">
+                    <i class="fas fa-copy mr-2"></i>Copy
+                </button>
+                <button id="downloadModalBtn" class="btn btn-primary">
+                    <i class="fas fa-download mr-2"></i>Download
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification hidden">
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- Local JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
