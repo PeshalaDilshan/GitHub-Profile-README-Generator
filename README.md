@@ -89,35 +89,30 @@ Simply open index.html in your browser to start using the generator.
 
 ---
 
-Contributing 🤝
+## Contributing 🤝
 
 Contributions are welcome! If you want to:
 
-Add new features
+- Add new features
 
-Fix bugs
+- Fix bugs
 
-Improve UI/UX
+- Improve UI/UX
 
-Suggest ideas
+- Suggest ideas
 
 
-Please follow these steps:
+### Please follow these steps:
 
 1. Fork the repo
 
-
 2. Create a branch (git checkout -b feature-name)
-
 
 3. Make your changes
 
-
 4. Commit (git commit -m "Add feature")
 
-
 5. Push (git push origin feature-name)
-
 
 6. Open a Pull Request
 
