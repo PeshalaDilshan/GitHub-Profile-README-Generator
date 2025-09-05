@@ -6,6 +6,8 @@ Create beautiful, professional READMEs with this easy-to-use generator. Customiz
 ![GitHub stars](https://img.shields.io/github/stars/PeshalaDilshan/GitHub-Profile-README-Generator)
 ![GitHub forks](https://img.shields.io/github/forks/PeshalaDilshan/GitHub-Profile-README-Generator)
 
+## live - ![web app](https://peshaladilshan.github.io/GitHub-Profile-README-Generator)
+
 ## Features
 
 - ✨ **Multiple Skill Selection** - Select from predefined lists of technical skills
