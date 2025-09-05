@@ -82,22 +82,50 @@ The generator is fully responsive and works on:
 - Tablets
 - Mobile devices
 
-## Contributing
+## Open locally
 
-Contributions are welcome! Here's how you can help:
+Simply open index.html in your browser to start using the generator.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
-### Development Setup
+---
 
-1. Clone the repository
-2. Make your changes
-3. Test in multiple browsers
-4. Submit a pull request
+Contributing 🤝
+
+Contributions are welcome! If you want to:
+
+Add new features
+
+Fix bugs
+
+Improve UI/UX
+
+Suggest ideas
+
+
+Please follow these steps:
+
+1. Fork the repo
+
+
+2. Create a branch (git checkout -b feature-name)
+
+
+3. Make your changes
+
+
+4. Commit (git commit -m "Add feature")
+
+
+5. Push (git push origin feature-name)
+
+
+6. Open a Pull Request
+
+
+
+Label your issues if you want to make them easier for others to pick up.
+
+
 
 ## License
 
@@ -106,8 +134,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - [GSAP](https://greensock.com/gsap/) for animations
+
 - [Tailwind CSS](https://tailwindcss.com/) for styling
+
 - [Font Awesome](https://fontawesome.com/) for icons
+
 - [Simple Icons](https://simpleicons.org/) for social media icons
 
 ## Support
@@ -115,6 +146,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you find this project helpful, consider supporting:
 
 [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com)
+
 [![Ko-Fi](https://cdn.ko-fi.com/cdn/kofi3.png?v=3)](https://ko-fi.com)
 
 ---
