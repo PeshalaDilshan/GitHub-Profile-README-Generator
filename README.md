@@ -1,89 +1,40 @@
-# GitHub Profile README Generator
+# GitHub Profile README Generator 🚀
 
-Create beautiful, professional READMEs with this easy-to-use generator. Customize your GitHub profile with skills, social links, and badges.
+![GitHub repo size](https://img.shields.io/github/repo-size/PeshalaDilshan/GitHub-Profile-README-Generator)
+![GitHub contributors](https://img.shields.io/github/contributors/PeshalaDilshan/GitHub-Profile-README-Generator)
+![GitHub stars](https://img.shields.io/github/stars/PeshalaDilshan/GitHub-Profile-README-Generator?style=social)
+![GitHub forks](https://img.shields.io/github/forks/PeshalaDilshan/GitHub-Profile-README-Generator?style=social)
+![GitHub issues](https://img.shields.io/github/issues/PeshalaDilshan/GitHub-Profile-README-Generator)
+![License](https://img.shields.io/github/license/PeshalaDilshan/GitHub-Profile-README-Generator)
 
-![GitHub](https://img.shields.io/github/license/PeshalaDilshan/GitHub-Profile-README-Generator)
-![GitHub stars](https://img.shields.io/github/stars/PeshalaDilshan/GitHub-Profile-README-Generator)
-![GitHub forks](https://img.shields.io/github/forks/PeshalaDilshan/GitHub-Profile-README-Generator)
+A simple, intuitive web tool to create **personalized GitHub Profile READMEs** in minutes. No coding required! Perfect for developers who want to showcase their projects, skills, and achievements on GitHub.  
 
-live link:
-   ```bash
-   https://peshaladilshan.github.io/GitHub-Profile-README-Generator
-   ```
+[🔗 Live Demo](https://peshaladilshan.github.io/GitHub-Profile-README-Generator)  
 
-## Features
+---
 
-- ✨ **Multiple Skill Selection** - Select from predefined lists of technical skills
-- 🌐 **Social Media Integration** - Connect all your social profiles
-- 🏆 **Add-ons & Badges** - Display support badges and GitHub stats
-- 📤 **Export/Import** - Save and restore your profile configurations
-- 📱 **Fully Responsive** - Works on all device sizes
-- 🎨 **Modern UI** - Clean, intuitive interface with animations
+## Features ✨
 
-## Technical Skills Categories
+- Easy-to-use interface for creating GitHub READMEs  
+- Customisable sections for projects, skills, social links, and more  
+- Live preview while editing  
+- Export README in Markdown format ready to use  
+- Fully deployed on GitHub Pages  
 
-- **Skills** - General professional skills
-- **Programming Languages** - JavaScript, Python, Java, C++, Go, Rust, Swift, Kotlin, PHP, Ruby, and more
-- **Frontend Development** - React, Vue, Angular, Svelte, Next.js, Gatsby, and more
-- **Backend Development** - Node.js, Express, Django, Flask, Spring, .NET, and more
-- **Mobile App Development** - React Native, Flutter, Swift, Kotlin, Xamarin, and more
-- **AI/ML** - TensorFlow, PyTorch, scikit-learn, Keras, OpenCV, and more
-- **Database** - MongoDB, PostgreSQL, MySQL, Redis, Cassandra, and more
-- **Data Visualization** - D3.js, Chart.js, Tableau, Power BI, Plotly, and more
-- **DevOps** - Docker, Kubernetes, AWS, Azure, GCP, Jenkins, Terraform, and more
-- **Backend as a Service (BaaS)** - Firebase, AWS Amplify, Supabase, Parse, and more
-- **Framework** - Express, Django, Flask, Spring, Laravel, Rails, and more
-- **Testing** - Jest, Cypress, Selenium, Mocha, PyTest, and more
-- **Software** - VS Code, IntelliJ, Photoshop, Figma, Git, Docker, and more
-- **Static Site Generators** - Gatsby, Next.js, Nuxt.js, Jekyll, Hugo, and more
-- **Game Engines** - Unity, Unreal Engine, Godot, Phaser, and more
-- **Automation** - GitHub Actions, Jenkins, Ansible, Puppet, and more
-- **Other** - GraphQL, REST APIs, Microservices, Blockchain, and more
+---
 
-## Social Media Integration
+## Planned Features 🛠️
 
-Connect with your audience through:
-- GitHub
-- Twitter
-- Dev.to
-- CodePen
-- CodeSandbox
-- Stack Overflow
-- LinkedIn
-- Kaggle
-- Facebook
-- Instagram
-- Dribbble
-- Behance
-- Hashnode
-- Medium
-- YouTube
-- CodeChef
-- HackerRank
-- Codeforces
-- LeetCode
-- TopCoder
-- HackerEarth
-- GeeksforGeeks
-- Discord
-- RSS Feed
+- AI-assisted README generation based on GitHub activity  
+- Advanced customization using JSON configs  
+- GitHub stats, trophies, and visitor counters  
+- Mobile-friendly responsive interface  
+- Enhanced themes and styling options  
 
-## Add-ons & Badges
+---
 
-Enhance your profile with:
-- Buy Me A Coffee support badge
-- Ko-Fi support badge
-- Visitor count badge
-- GitHub trophy display
-- GitHub profile stats card
-- Top skills visualization
-- GitHub streak stats
-- Twitter badge
-- Latest Dev.to blogs (GitHub Action)
-- Latest Medium blogs (GitHub Action)
-- Latest personal blog posts (GitHub Action)
+## Getting Started 🏁
 
-## Getting Started
 
 ### Prerequisites
 
